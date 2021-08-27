@@ -31,7 +31,7 @@ int main()
     InitWindow(screenWidth, screenHeight, "raylib");
 
     Camera camera = { 0 };
-    camera.position = (Vector3){ 10.0f, 10.0f, 8.0f };
+    camera.position = (Vector3){ 10.0f, 20.0f, 25.0f };
     camera.target = (Vector3){ 0.0f, 0.0f, 0.0f };
     camera.up = (Vector3){ 0.0f, 1.0f, 0.0f };
     camera.fovy = 60.0f;
@@ -40,6 +40,7 @@ int main()
     SetCameraMode(camera, CAMERA_ORBITAL);
 
     Vector3 cubePosition = { 0 };
+    Vector3 cube2Pos = { 3, 0, 0 };
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
@@ -61,6 +62,7 @@ int main()
             BeginMode3D(camera);
 
                 DrawCube(cubePosition, 2.0f, 2.0f, 2.0f, RED);
+                DrawCube(cube2Pos, 2.0f, 2.0f, 2.0f, GREEN);
                 DrawCubeWires(cubePosition, 2.0f, 2.0f, 2.0f, MAROON);
                 DrawGrid(10, 1.0f);
 
